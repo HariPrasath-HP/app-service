@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: currency-exchange-service
+          uri: lb://currency-exchange
+          predicates:
+            - Path=/currency-exchange/**
+server:
+  port: 9001
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_ADDRESS}
