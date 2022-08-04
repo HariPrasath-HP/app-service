@@ -3,3 +3,10 @@ server:
 
 spring:
   application.name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: currency-exchange-service
+          uri: lb://currency-exchange-service
+          predicates:
+            - Path=/currency-exchange-service/**
