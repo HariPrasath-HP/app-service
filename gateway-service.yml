@@ -10,3 +10,7 @@ spring:
           uri: lb://currency-exchange-service
           predicates:
             - Path=/currency-exchange-service/**
+      discovery:
+        locator:
+          enabled: 'true'
+          lower-case-service-id: 'true'
