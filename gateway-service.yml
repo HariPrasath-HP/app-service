@@ -7,7 +7,7 @@ spring:
     gateway:
       routes:
         - id: currency-exchange-service
-          uri: lb://currency-exchange-service
+          uri: lb://CURRENCY-EXCHANGE-SERVICE
           predicates:
             - Path=/currency-exchange-service/**
       discovery:
